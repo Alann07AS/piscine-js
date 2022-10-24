@@ -1,5 +1,5 @@
 function isPositive(params) {
-    if (params > 0) {
+    if (params >= 0) {
         return true
     } else {
         return false
@@ -13,3 +13,4 @@ function abs(params) {
         return params*-1
     }
 }
+console.log(abs(0))
