@@ -8,7 +8,7 @@ const obj = [
 ]
 const nested = [
     new [4, undefined, '2'],
-    obj = [
+    new obj = [
         new str = "",
         new num = 0,
         new bool = false,
