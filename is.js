@@ -1,85 +1,87 @@
 
 // remove before push !!
-const is = {}
-// !!!!!!!!
+const is = {
 
-
-function num(params) {
+num: function (params) {
     if (typeof(params) === 'number') {
         return true
     } else {
         return false
     }
-}
-function nan(params) {
+},
+nan: function (params) {
     if (isNaN(params)) {
         return true
     } else {
         return false
     }
 
-}
-function str(params) {
+},
+str: function (params) {
     if (typeof(params) === 'string') {
         return true
     } else {
         return false
     }
 
-}
-function bool(params) {
+},
+bool: function (params) {
     if (typeof(params) === 'boolean') {
         return true
     } else {
         return false
     }
-}
-function undef(params) {
+},
+undef: function (params) {
     if (typeof(params) === 'undefined') {
         return true
     } else {
         return false
     }
-}
-function def(params) {
+},
+def: function (params) {
     if (typeof(params) === 'undefined') {
         return false
     } else {
         return true
     }
-}
-function arr(params) {
+},
+arr: function (params) {
     if (params.isAray()) {
         return true
     } else {
         return false
     }
-}
-function obj(params) {
+},
+obj: function (params) {
     if (typeof(params) === 'object') {
         return true
     } else {
         return false
     }
-}
-function fun(params) {
+},
+fun: function (params) {
     if (typeof(params) === 'function') {
         return true
     } else {
         return false
     }
-}
-function truthy(params) {
+},
+truthy: function (params) {
     if ((params)) {
         return true
     } else {
         return false
     }
-}
-function falsy(params) {
+},
+falsy: function (params) {
     if (!(params)) {
         return true
     } else {
         return false
     }
 }
+
+}
+// !!!!!!!!
+
