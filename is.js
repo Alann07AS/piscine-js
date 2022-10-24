@@ -1,80 +1,79 @@
 
 // remove before push !!
-is = {
 
-num: function (params) {
+is.num = function (params) {
     if (typeof(params) === 'number') {
         return true
     } else {
         return false
     }
-},
-nan: function (params) {
+}
+is.nan = function (params) {
     if (isNaN(params)) {
         return true
     } else {
         return false
     }
 
-},
-str: function (params) {
+}
+is.str = function (params) {
     if (typeof(params) === 'string') {
         return true
     } else {
         return false
     }
 
-},
-bool: function (params) {
+}
+is.bool = function (params) {
     if (typeof(params) === 'boolean') {
         return true
     } else {
         return false
     }
-},
-undef: function (params) {
+}
+is.undef = function (params) {
     if (typeof(params) === 'undefined') {
         return true
     } else {
         return false
     }
-},
-def: function (params) {
+}
+is.def = function (params) {
     if (typeof(params) === 'undefined') {
         return false
     } else {
         return true
     }
-},
-arr: function (params) {
+}
+is.arr = function (params) {
     if (params.isAray()) {
         return true
     } else {
         return false
     }
-},
-obj: function (params) {
+}
+is.obj = function (params) {
     if (typeof(params) === 'object') {
         return true
     } else {
         return false
     }
-},
-fun: function (params) {
+}
+is.fun = function (params) {
     if (typeof(params) === 'function') {
         return true
     } else {
         return false
     }
-},
-truthy: function (params) {
+}
+is.truthy = function (params) {
     if ((params)) {
         return true
     } else {
         return false
     }
-},
-falsy: function (params) {
+}
+is.falsy = function (params) {
     if (!(params)) {
         return true
     } else {
@@ -82,6 +81,5 @@ falsy: function (params) {
     }
 }
 
-}
 // !!!!!!!!
 
