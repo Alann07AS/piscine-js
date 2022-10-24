@@ -9,10 +9,10 @@ const orbitalPlanet = {
     neptune : 164.79132,
 }
 
-oneEarthYearSecond = 31557600
+const oneEarthYearSecond = 31557600
 
 function dogYears(planet, age) {
-    ageYear = (age / oneEarthYearSecond)*7
-    newAge = ageYear * orbitalPlanet[planet]
+    const ageYear = (age / oneEarthYearSecond)*7
+    const newAge = ageYear * orbitalPlanet[planet]
     return Math.round(newAge * 100) / 100
 }
