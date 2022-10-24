@@ -2,7 +2,7 @@ function getAcceleration(params) {
 if (params.f/params.m === params.Δv/params.Δt === 2*params.d/(params.t*params.t != undefined)) {
     return params.f/params.m
 } else {
-    'impossible'
+    return 'impossible'
 }
 }
 
@@ -17,3 +17,5 @@ if (params.f/params.m === params.Δv/params.Δt === 2*params.d/(params.t*params.
 // Δt = final time - initial time
 // d = distance
 // t = time
+
+console.log(getAcceleration({}))
