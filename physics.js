@@ -1,9 +1,15 @@
 function getAcceleration(params) {
-if (params.f/params.m === params.Δv/params.Δt === 2*params.d/(params.t*params.t != undefined)) {
-    return params.f/params.m
+    let result = 0
+if (params.f/params.m) {
+    result = params.f/params.m
+} else if  ((params.Δv/params.Δt) === result || (params.Δv/params.Δt)){
+    result = params.Δv/params.Δt
+} else if  ((2*params.d/(params.t*params.t) === result || (2*params.d/(params.t*params.t)))) {
+    result = 2*params.d/(params.t*params.t)
 } else {
     return 'impossible'
 }
+return result
 }
 
 // a = F/m
@@ -18,4 +24,4 @@ if (params.f/params.m === params.Δv/params.Δt === 2*params.d/(params.t*params.
 // d = distance
 // t = time
 
-console.log(getAcceleration({}))
+console.log(getAcceleration({f: 10, m: 5, t: 3, d: 3000}))
