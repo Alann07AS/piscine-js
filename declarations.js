@@ -1,19 +1,19 @@
 const escapeStr = '\`\\\/\"\''
 const arr = [4, '2']
-const obj = [
-    new str = "",
-    new num = 0,
-    new bool = false,
-    new undef = undefined
-]
-const nested = [
-    new [4, undefined, '2'],
-    new obj = [
-        new str = "",
-        new num = 0,
-        new bool = false,
-    ]
-]
+const obj = {
+    str: "",
+    num: 0,
+    bool: false,
+    undef: undefined
+}
+const nested = {
+    arr: [4, undefined, '2'],
+    obj: {
+        str: "",
+        num: 0,
+        bool: false,
+    }
+}
 
 Object.freeze(arr)
 Object.freeze(obj)
