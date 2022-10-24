@@ -5,3 +5,11 @@ function isPositive(params) {
         return false
     }
 }
+
+function abs(params) {
+    if (isPositive(params)){
+        return params
+    } else {
+        return params*-1
+    }
+}
