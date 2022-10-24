@@ -11,6 +11,6 @@ function whisper(params) {
     return '*' + params.toLowerCase() + '*'
 }
 function capitalize(params) {
-    params[0].toUpperCase()
-    return params
+    return params.charAt(0).toUpperCase()+params.substr(1)
 }
+console.log(capitalize('str'))
