@@ -1,6 +1,6 @@
 
 // remove before push !!
-const is = {
+is = {
 
 num: function (params) {
     if (typeof(params) === 'number') {
