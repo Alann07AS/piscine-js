@@ -9,4 +9,7 @@
 function get(params) {
     return sourceObject[params]
 }
-// console.log(get('str'))
+function set(key, value) {
+    sourceObject[key] =value
+    return sourceObject[key]
+}
