@@ -1,11 +1,16 @@
 function multiply(a, b) {
-    return a * b
+    for (;a !== 0; a--) {
+        b += b
+    }
+    return b
 }
 
 function divide(a, b) {
-    return a / b
+    let i = 1
+    for (;multiply(i, a) < b; i++) {}
+    return i
 }
 
 function modulo(a, b) {
-    return a % b
+    return multiply(a, b) - divide(a, b)
 }
