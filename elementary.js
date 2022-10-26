@@ -15,10 +15,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    if (b>a) {return 0}
     let neg = false
     if (a < 0) { a = -a; neg = true }
     if (b < 0 && neg === true) { b = -b; neg = false } else if (b < 0) { b = -b; neg = true}
+    if (b>a) {return 0}
     let i = 0
     if (a>b) { let t = a; a = b; b = t}
     for (;multiply(i, a) <= b; i++) {}
@@ -33,4 +33,4 @@ function modulo(a, b) {
     return a-multiply(divide(a, b),b)
 }
 
-console.log(divide(34,78))
+console.log(divide(22,123))
