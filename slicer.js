@@ -1,6 +1,7 @@
 function slice(sli, i = 0, imax = Array(...sli).length) {
     let r = 1
-    while (i < 0 ) { i = imax + i}
+    if (i < 0 ) { i = imax + i}
+    if (imax < 0 ) { imax = Array(...sli).length}
     let a = []
     // console.log(i, imax)
     for (;i != imax; i+= r) {
