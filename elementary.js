@@ -1,6 +1,7 @@
 function multiply(a, b) {
-    for (;a !== 0; a--) {
-        b += b
+    let r = b
+    for (;a !== 1; a--) {
+        b += r
     }
     return b
 }
@@ -14,3 +15,5 @@ function divide(a, b) {
 function modulo(a, b) {
     return multiply(a, b) - divide(a, b)
 }
+
+console.log(multiply(34, 78))
