@@ -1,7 +1,7 @@
 function slice(sli, i = 0, imax = Array(...sli).length) {
     if (i < 0 || i > sli.length) {i = 0; imax = Array(...sli).length}
     let a = []
-    console.log(i, imax)
+    // console.log(i, imax)
     for (;i < imax; i++) {
         a.push(sli[i])
     }
