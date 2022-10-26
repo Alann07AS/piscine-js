@@ -16,4 +16,4 @@ function modulo(a, b) {
     return multiply(a, b) - divide(a, b)
 }
 
-console.log(multiply(34, 78))
+// console.log(multiply(34, 78))
