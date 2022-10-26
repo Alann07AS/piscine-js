@@ -8,12 +8,14 @@ function multiply(a, b) {
 
 function divide(a, b) {
     let i = 1
+    if (a>b) { let t = a; a = b; b = t}
     for (;multiply(i, a) < b; i++) {}
+    i--
     return i
 }
 
 function modulo(a, b) {
-    return multiply(a, b) - divide(a, b)
+    return a-multiply(divide(a, b),b)
 }
 
-// console.log(multiply(34, 78))
+// console.log(modulo(119, 20))
