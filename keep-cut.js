@@ -20,5 +20,5 @@ function keepFirstLast (str) {
     return keepFirst(str)+keepLast(str)
 }
 
-let t = 'ab'
-console.log(cutFirst(t))
+// let t = 'ab'
+// console.log(cutFirst(t))
