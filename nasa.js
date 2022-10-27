@@ -1,10 +1,13 @@
 function nasa(N) {
-    if (N%3 == 0) {
-        if (N%5 == 0) {return 'NASA'} else {return 'NA'}
-    } else if (N%5 == 0) {return 'SA'}
     let result = ''
+    let txt
     for (let i = 1; i <= N; i++) {
-        result += i.toString()
+        if (i%3 == 0) {
+            if (i%5 == 0) {txt = 'NASA'} else {txt = 'NA'}
+        } else if (i%5 == 0) {txt = 'SA'} else {txt = i.toString()}
+        result += txt + " "
     }
-    return result
+    return result.slice(0, result.length-1)
 }
+
+// console.log(nasa(15))
