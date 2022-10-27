@@ -16,9 +16,8 @@ function keepLast (str) {
     return str.slice(str.length-2, str.length)
 }
 function keepFirstLast (str) {
-    if (str.length <= 2) {return str}
+    if (str.length == 3) {return keepFirst(str).slice(0,1) + keepLast(str)}
     return keepFirst(str)+keepLast(str)
 }
 
-// let t = 'ab'
-// console.log(cutFirst(t))
+console.log(keepFirstLast('afd'))
