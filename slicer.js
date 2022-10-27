@@ -1,9 +1,9 @@
 function slice(sli, i = 0, imax = Array(...sli).length) {
     let r = 1
-    if (i < 0 ) { i = imax + i}
     if (imax < 0 ) { imax = Array(...sli).length + imax}
+    if (i < 0 ) { i = Array(...sli).length + i}
     let a = []
-    // console.log(i, imax)
+    console.log(i, imax)
     for (;i != imax; i+= r) {
         a.push(sli[i])
     }
@@ -13,4 +13,4 @@ function slice(sli, i = 0, imax = Array(...sli).length) {
 
 
 // const a = [2,8,9]
-console.log(slice('abcdef', 0, -2))
+console.log(slice('abcdef', -3, -1))
