@@ -23,7 +23,7 @@ function trunc (nb) {
         return recuTrunc(add, nBase/10, nb)
     }
     let p = 1
-    for (i = power(nb, 0); i != 0;i--) { p *= 10 }
+    for (let i = power(nb, 0); i != 0;i--) { p *= 10 }
     if (isNeg)  {return -recuTrunc(0,p,nb)} else {return recuTrunc(0,p,nb)}
 }
 function ceil (nb) {
