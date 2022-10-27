@@ -16,7 +16,7 @@ function trunc (nb) {
     const recuTrunc = function (add, n, nb) {
         let nBase = n
         if ((n+1 > nb && n-1 < nb)||nBase<1) { return add }
-        for (;add<nb;) {
+        for (;add<=nb;) {
             add += nBase
         }
         add -= nBase
@@ -46,4 +46,10 @@ function round (nb) {
     }
 }
 
-// console.log(round(-123.50))
+// console.log(trunc(0.8))
+// const nums = [Math.PI, -Math.PI, Math.E, -Math.E, 0]
+// console.log(nums.map(round)) // , [3, -3, 3, -3, 0])
+// console.log(nums.map(floor)) // , [3, -4, 2, -3, 0])
+// console.log(nums.map(trunc)) // , [3, -3, 2, -2, 0])
+// console.log(nums.map(ceil)) // , [4, -3, 3, -2, 0])
+// console.log(({ c0xfffffffff + ctx) === 0xfffffffff + ~~ctx)
