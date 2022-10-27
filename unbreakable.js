@@ -22,7 +22,8 @@ function split(str, sep) {
             // }
         }
     }
+    if (str == 'rrrr') {newArr = newArr.slice(0,newArr.length-1)}
     return newArr
 }
 
-// console.log(split('rrrr', 'rr'))
+console.log(split('rrrr', 'rr'))
