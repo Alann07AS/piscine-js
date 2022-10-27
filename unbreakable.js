@@ -17,9 +17,9 @@ function split(str, sep) {
         };
         if (i == str.length-1) {
             console.log(firstPose,str.length-1)
-            if (str.slice(firstPose,str.length) !== '') {
+            // if (str.slice(firstPose,str.length) !== '') {
                 newArr.push(str.slice(firstPose,str.length))
-            }
+            // }
         }
     }
     return newArr
