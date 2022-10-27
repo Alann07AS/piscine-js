@@ -17,7 +17,8 @@ function keepLast (str) {
 }
 function keepFirstLast (str) {
     if (str.length == 3) {return keepFirst(str).slice(0,1) + keepLast(str)}
+    if (str.length == 2) {return keepFirst(str)}
     return keepFirst(str)+keepLast(str)
 }
 
-console.log(keepFirstLast('afd'))
+console.log(keepFirstLast('af'))
