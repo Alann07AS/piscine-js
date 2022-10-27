@@ -4,7 +4,7 @@ function reverse(arr) {
         newArr.push(arr[i]);
     }
     if (typeof(arr) == 'string') {return newArr.join('')}
-    return arr
+    return newArr
 }
 
-console.log(reverse('abcd'))
+// console.log(reverse([1,2,3]))
