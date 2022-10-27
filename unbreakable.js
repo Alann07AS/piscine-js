@@ -16,12 +16,11 @@ function split(str, sep) {
             firstPose = i+sep.length
             i = i+sep.length
         };
-        if (i == str.length-1) {
-            console.log(firstPose,str.length-1)
+        if (i >= str.length-1) {
             newArr.push(str.slice(firstPose,str.length))
         }
     }
     return newArr
 }
 
-// console.log(split('1, i2, i3, i4', ', i'))
+console.log(split('ee,ff,g,', ','))
