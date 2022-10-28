@@ -1,4 +1,5 @@
 function sums(nb) {
+    if (nb <= 1) {return []}
     let arr = new Array
     let resultArr = []
     for (let i = 0; i < nb; i++) {
@@ -38,3 +39,10 @@ function sums(nb) {
 
 
 console.log(sums(7), 'salut')
+
+console.log(sums(0),)
+console.log(sums(1),)
+console.log(sums(2),)
+console.log(sums(4),)
+console.log(sums(7),)
+console.log(sums(10),)
