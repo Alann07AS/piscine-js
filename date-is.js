@@ -6,16 +6,16 @@ function isValid(date) {
     }
 }
 function isAfter(date, date2) {
-    return date > date2
+    return date > date2 && isValid(date) && isValid(date2)
 }
 function isBefore(date, date2) {
-    return date2 > date
+    return date2 > date && isValid(date) && isValid(date2)
 }
 function isFuture(date) {
-    return Date.now() > date
+    return Date.now() > date && isValid(date)
 }
 function isPast(date) {
-    return Date.now() < date
+    return Date.now() < date  && isValid(date)
 }
 
 
