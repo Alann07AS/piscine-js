@@ -1,8 +1,8 @@
 function isValid(date) {
-    if ( !isNaN(date) ) {
-        return true
-    } else {
+    if ( isNaN(date) || date == 0) {
         return false
+    } else {
+        return true
     }
 }
 function isAfter(date, date2) {
@@ -19,9 +19,9 @@ function isPast(date) {
 }
 
 
-console.log(isValid("dsfsd"));
-console.log(isValid(Date.now()));
-console.log(isValid(new Date('December 17, 1995 03:24:00')));
-console.log(isValid(new Date(1488370835081)));
-console.log(isValid(new Date('1995-12-17T03:24:00')));
-console.log(isValid(new Date('1995-12-17T03:24:00').getTime()));
+console.log(isValid(''));
+// console.log(isValid(Date.now()));
+// console.log(isValid(new Date('December 17, 1995 03:24:00')));
+// console.log(isValid(new Date(1488370835081)));
+// console.log(isValid(new Date('1995-12-17T03:24:00')));
+// console.log(isValid(new Date('1995-12-17T03:24:00').getTime()));
