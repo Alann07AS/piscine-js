@@ -23,7 +23,7 @@ function isLeapYear(dates) {
         return false
     }
 } 
-function isLastDayOfMonth(dates) {
+function isLastDayOfMonth(date) {
     date.setDate(date.getDate() + 1)
     if ( date.getDate() == 1) {
         return true
