@@ -1,6 +1,6 @@
-function matchCron(match, date) {
+function matchCron(match ='', date) {
     date = new Date(date)
-    match = match.Split(' ')
+    match = match.split(' ')
     if (match[0] != '*' && match[0] != date.getMinutes()) {
         return false
     }
