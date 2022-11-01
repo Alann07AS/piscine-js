@@ -13,7 +13,7 @@ function upperCasingStates(arr) {
 function fahrenheitToCelsius(arr) {
     return arr.map(x => {
         let C = ((parseInt(x.split(/(°)/)[0]))-32)*5/9
-        return Math.round(C).toString() + '°C'
+        return Math.floor(C).toString() + '°C'
     } )
 }
 function trimTemp(arr) {
@@ -30,8 +30,8 @@ function tempForecasts(arr) {
         return ar.temperature + 'elsius in ' + ar.city + ', ' + ar.state
     })
 }
-console.log(upperCasingStates(['alabama', 'new jersey']));
-// console.log(fahrenheitToCelsius(['68°F', '59°F', '25°F'])) // -> ['20°C', '15°C', '-4°C']);
+// console.log(upperCasingStates(['alabama', 'new jersey']));
+console.log(fahrenheitToCelsius(['86°F', '100°F', '41°F', '55°F', '10°F', '70°F', '-2°F'])) // -> ['20°C', '15°C', '-4°C']);
 
 // console.log(trimTemp([
     // { city: 'Los Angeles', temperature: '  101 °F   ' },
