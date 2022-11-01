@@ -14,7 +14,7 @@ function isWeekend(dates) {
         return false
     }
 } 
-function isLeapYearis(dates) {
+function isLeapYear(dates) {
     dates.setMonth(1)
     dates.setDate(29)
     if (dates.getDate() == 29) {
@@ -23,7 +23,7 @@ function isLeapYearis(dates) {
         return false
     }
 } 
-function isLastDayOfMonthhe(dates) {
+function isLastDayOfMonth(dates) {
     date.setDate(date.getDate() + 1)
     if ( date.getDate() == 1) {
         return true
