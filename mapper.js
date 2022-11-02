@@ -32,7 +32,7 @@ function flatMap(arr, func) {
     return arr
 }
 
-console.log( flatMap([1, 2, 3], (n) => [n, n]))
-const mixed = [[10], -10, 20, -95, 86, [102], [35, 89], 110]
-const add1 = (el) => el + 1
-console.log(flatMap(mixed, add1))
+// console.log( flatMap([1, 2, 3], (n) => [n, n]))
+// const mixed = [[10], -10, 20, -95, 86, [102], [35, 89], 110]
+// const add1 = (el) => el + 1
+// console.log(flatMap(mixed, add1))
