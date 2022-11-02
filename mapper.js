@@ -3,7 +3,7 @@ function map(arr, func) {
     for (let i = 0; i < arr.length; i++) {
         arr2.push(func(arr[i], i, arr))
     }
-    return arr
+    return arr2
 }
 
 function flat(arr = [], deep = 0) {
@@ -27,3 +27,4 @@ function flatMap(arr, func) {
     arr = flat(arr)
     return arr
 }
+
