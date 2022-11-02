@@ -6,7 +6,7 @@ function map(arr, func) {
     return arr2
 }
 
-function flat(arr = [], deep = 0) {
+function flat(arr = [], deep = Infinity) {
     let inDeeper = 'NO'
     if (deep == Infinity) {inDeeper = ','; deep = 1}
     for (; deep >= 0 ; deep--) {
@@ -28,3 +28,4 @@ function flatMap(arr, func) {
     return arr
 }
 
+console.log( flatMap([1, 2, 3], (n) => [n, n]))
