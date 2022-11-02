@@ -28,23 +28,23 @@ function partition(arr, func) {
     }
     return [arrTrue, arrFalse]
 }
-const check1 = (el) => el % 2 === 0
-const onlyNumbers = [
-    10,
-    -10,
-    20,
-    -95,
-    15,
-    86,
-    2,
-    3,
-    5,
-    32,
-    33,
-    45,
-    450,
-    950,
-    66,
-    150,
-]
-console.log(filter(onlyNumbers, check1))
+// const check1 = (el) => el % 2 === 0
+// const onlyNumbers = [
+//     10,
+//     -10,
+//     20,
+//     -95,
+//     15,
+//     86,
+//     2,
+//     3,
+//     5,
+//     32,
+//     33,
+//     45,
+//     450,
+//     950,
+//     66,
+//     150,
+// ]
+// console.log(filter(onlyNumbers, check1))
