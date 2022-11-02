@@ -1,5 +1,3 @@
-const arr1 = ['fill', 'carbon', 'chart', 'glare', 'express']
-const arr2 = ['double', 'afford', 'coalition', 'reaction', 'persist']
 function longWords(arr) {
     return arr.every(x => x.length >= 5 )
 }
