@@ -18,8 +18,8 @@ function reduce(arr, func) {
     return acc
 } 
 function reduceRight(arr, func) {
-    let acc = arr[0]
-    for (let i = arr.length-1; i > 0; i--) {
+    let acc = arr[arr.length-1]
+    for (let i = arr.length-2; i >= 0; i--) {
         acc = func(acc, arr[i])
     }
     return acc
