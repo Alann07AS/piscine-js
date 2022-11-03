@@ -4,6 +4,6 @@ function flow(arrFunc) {
         arrFunc.forEach(func => {
             res = [func(...res)]
         });
-        return res
+        return {...res}
     }
 }
