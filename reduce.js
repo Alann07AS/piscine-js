@@ -25,5 +25,5 @@ function reduceRight(arr, func) {
     return acc
 }
 
-const adder = (a, b) => a + b
-console.log(reduce([1, 2, 3], adder))
+// const adder = (a, b) => a + b
+// console.log(reduce([1, 2, 3], adder))
