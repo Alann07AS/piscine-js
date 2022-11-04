@@ -7,7 +7,7 @@ export function generateLetters() {
         const dv = document.createElement("div")
         dv.textContent = randomLetter
         dv.style.fontSize = (i+11) + "px"
-        if (i >= boldI) {
+        if (i >= boldI && bold != 600) {
             bold += 200
             boldI += 40
         }
