@@ -11,8 +11,10 @@ export function generateClasses() {
 export function generateColdShades() {
     const regCold = /(aqua|blue|turquoise|green|cyan|navy|purple)/gi
     colors.forEach(color => {
-        // console.log(color)
-        if (regCold.test(color)) {
+    })
+    colors.forEach(color => {
+        if ((regCold.test(color))) {
+            console.log(regCold.test(color))
             const coloDiv = document.createElement("div")
             coloDiv.classList.add(color)
             coloDiv.textContent = color
