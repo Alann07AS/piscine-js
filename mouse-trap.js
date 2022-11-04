@@ -3,8 +3,8 @@ export function createCircle() {
         const circle = document.createElement("div")
         circle.style.background = "white"
         circle.classList.add("circle")
-        circle.style.top = e.clientY-25+"px"
-        circle.style.left = e.clientX-25+"px"
+        circle.style.top = e.clientY+"px"
+        circle.style.left = e.clientX+"px"
         document.body.append(circle)
         console.log(e, e.clientX, e.clientY);
     })
