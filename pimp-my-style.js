@@ -5,7 +5,7 @@ export function pimp() {
     const btm = document.querySelector("button")
 
     if (i == styles.length) {
-        btm.classList.add("unpimp")
+        btm.classList.toggle("unpimp")
     }
     console.log(btm.hasAttribute("unpimp"))
     if (btm.classList.contains("unpimp")) {
@@ -16,6 +16,6 @@ export function pimp() {
         i++
     }
     if (i == 0) {
-        btm.classList.remove("unpimp")
+        btm.classList.toggle("unpimp")
     }
 }
