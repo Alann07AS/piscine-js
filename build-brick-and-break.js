@@ -12,7 +12,7 @@ export function build(nbBrick) {
         document.body.append(brick)
         if (i >= nbBrick) {clearInterval(time)}; 
         i++;
-    }, 10)
+    }, 100)
 }
 
 export function repair(...arrId) {
