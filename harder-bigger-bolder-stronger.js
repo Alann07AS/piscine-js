@@ -13,7 +13,7 @@ export function generateLetters() {
             boldIncrease = 200
             boldI += 40
         }
-        dv.style.bold = bold
+        dv.style.fontWeight = bold
         document.body.append(dv)
     }
 }
