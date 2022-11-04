@@ -24,5 +24,5 @@ export function generateColdShades() {
 }
 export function choseShade(colorSelect) {
     const allDiv = document.querySelectorAll("div")
-    allDiv.forEach((div) => {div.style.background = colorSelect})
+    allDiv.forEach((div) => {div.classList.replace(div.className, colorSelect)})
 }
