@@ -1,6 +1,7 @@
 export function generateLetters() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let bold = 200
+    let bold = 300
+    let boldIncrease = 100
     let boldI = (120/3)-1
     for (let i = 0; i < 120; i++) {
         const randomLetter =  alphabet[Math.floor(Math.random() * alphabet.length)]
@@ -8,7 +9,8 @@ export function generateLetters() {
         dv.textContent = randomLetter
         dv.style.fontSize = (i+11) + "px"
         if (i >= boldI && bold != 600) {
-            bold += 200
+            bold += boldIncrease
+            boldIncrease = 200
             boldI += 40
         }
         dv.style.bold = bold
