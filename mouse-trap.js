@@ -11,6 +11,7 @@ export function createCircle() {
 }
 let isTrap = false
 export function moveCircle() {
+    const boxData = document.querySelector("box").getBoundingClientRect()
     document.addEventListener('mousemove', (e) => {
         const lastChild = document.body.lastChild
         if (lastChild.classList.contains('circle')) {
@@ -19,19 +20,20 @@ export function moveCircle() {
             lastChild.style.left = e.clientX-25+"px"
             lastChild.style.top = e.clientY-25+"px"
         } else {
-            const boxData = document.querySelector("box").getBoundingClientRect()
             lastChild.style.background = "var(--purple)"
-            if (e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25) {
-                lastChild.style.left = e.clientX-25+"px"
+            if (e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26) {
+                lastChild.style.left = e.clientX-26+"px"
             } 
-            if (e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25) {
-                lastChild.style.top = e.clientY-25+"px"
+            if (e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26) {
+                lastChild.style.top = e.clientY-26+"px"
             }
+        }
+        if ((e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
+            isTrap = true
         }
         }
     })
     document.addEventListener('click', (e) => {
-        const boxData = document.querySelector("box").getBoundingClientRect()
         if (!(e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
             isTrap = false
         }
@@ -44,8 +46,8 @@ export function setBox() {
     box.style.justifyContent = 'center'
     box.style.alignContent = 'center'
     document.body.append(box)
-    box.addEventListener("mouseover", (e) => {
-        console.log('mouse enter')
-        isTrap = true
-    })
+    // box.addEventListener("mou", (e) => {
+    //     console.log('mouse enter')
+    //     isTrap = true
+    // })
 }
