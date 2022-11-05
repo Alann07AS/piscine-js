@@ -1,16 +1,23 @@
+let isTrap = false
 export function createCircle() {
     const boxData = document.querySelector("box").getBoundingClientRect()
     document.addEventListener('mousedown', (e) => {
         const circle = document.createElement("div")
-        circle.style.background = "white"
+        circle.style.background = "green"
+        if (!(e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
+            console.log('inBox');
+            isTrap = false
+            circle.style.background = "white"
+        } else {
+            circle.style.background = "var(--purple)"
+            console.log('outBox');
+        }
         circle.classList.add("circle")
         circle.style.top = e.clientY-25+"px"
         circle.style.left = e.clientX-25+"px"
         document.body.append(circle)
-        console.log(e, e.clientX, e.clientY);
     })
 }
-let isTrap = false
 export function moveCircle() {
     const boxData = document.querySelector("box").getBoundingClientRect()
     document.addEventListener('mousemove', (e) => {
@@ -29,16 +36,11 @@ export function moveCircle() {
                 lastChild.style.top = e.clientY-26+"px"
             }
         }
-        if ((e.clientX >  boxData.x && e.clientX < boxData.width+boxData.x && e.clientY >  boxData.y && e.clientY < boxData.height+boxData.y)) {
+        if ((e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
             isTrap = true
         }
         }
     })
-    document.addEventListener('click', (e) => {
-        if (!(e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
-            isTrap = false
-        }
-    });
 }
 export function setBox() {
     const box = document.createElement("box")
