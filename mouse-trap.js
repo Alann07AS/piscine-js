@@ -21,10 +21,10 @@ export function moveCircle() {
         } else {
             const boxData = document.querySelector("box").getBoundingClientRect()
             lastChild.style.background = "var(--purple)"
-            if (e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26) {
+            if (e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25) {
                 lastChild.style.left = e.clientX-25+"px"
             } 
-            if (e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26) {
+            if (e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25) {
                 lastChild.style.top = e.clientY-25+"px"
             }
         }
@@ -32,7 +32,7 @@ export function moveCircle() {
     })
     document.addEventListener('click', (e) => {
         const boxData = document.querySelector("box").getBoundingClientRect()
-        if (!(e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26 && e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26)) {
+        if (!(e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
             isTrap = false
         }
     });
