@@ -9,13 +9,40 @@ export function createCircle() {
         console.log(e, e.clientX, e.clientY);
     })
 }
+let isTrap = false
 export function moveCircle() {
     document.addEventListener('mousemove', (e) => {
         const lastChild = document.body.lastChild
-        lastChild.style.top = e.clientY-25+"px"
-        lastChild.style.left = e.clientX-25+"px"
+        if (!isTrap) {
+            lastChild.style.left = e.clientX-25+"px"
+            lastChild.style.top = e.clientY-25+"px"
+        } else {
+            const boxData = document.querySelector("box").getBoundingClientRect()
+            console.log(boxData)
+            if (e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26) {
+                lastChild.style.left = e.clientX-25+"px"
+            } 
+            if (e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26) {
+                lastChild.style.top = e.clientY-25+"px"
+            }
+        }
     })
+    document.addEventListener('click', (e) => {
+        const boxData = document.querySelector("box").getBoundingClientRect()
+        if (!(e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26 && e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26)) {
+            isTrap = false
+        }
+    });
 }
 export function setBox() {
-    
+    const box = document.createElement("box")
+    box.classList.add("box")
+    box.style.background = ''// "var(--purple)"
+    box.style.justifyContent = 'center'
+    box.style.alignContent = 'center'
+    document.body.append(box)
+    box.addEventListener('mouseenter', (e) => {
+        console.log('mousemove coucou')
+        isTrap = true
+    })
 }
