@@ -1,4 +1,5 @@
 export function createCircle() {
+    const boxData = document.querySelector("box").getBoundingClientRect()
     document.addEventListener('mousedown', (e) => {
         const circle = document.createElement("div")
         circle.style.background = "white"
@@ -28,7 +29,7 @@ export function moveCircle() {
                 lastChild.style.top = e.clientY-26+"px"
             }
         }
-        if ((e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
+        if ((e.clientX >  boxData.x && e.clientX < boxData.width+boxData.x && e.clientY >  boxData.y && e.clientY < boxData.height+boxData.y)) {
             isTrap = true
         }
         }
@@ -46,8 +47,8 @@ export function setBox() {
     box.style.justifyContent = 'center'
     box.style.alignContent = 'center'
     document.body.append(box)
-    // box.addEventListener("mou", (e) => {
-    //     console.log('mouse enter')
-    //     isTrap = true
-    // })
+    box.addEventListener("mou", (e) => {
+        console.log('mouse enter')
+        isTrap = true
+    })
 }
