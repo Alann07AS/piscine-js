@@ -44,7 +44,7 @@ export function setBox() {
     box.style.justifyContent = 'center'
     box.style.alignContent = 'center'
     document.body.append(box)
-    box.addEventListener('mouseenter', (e) => {
+    box.addEventListener("mouseover", (e) => {
         console.log('mouse enter')
         isTrap = true
     })
