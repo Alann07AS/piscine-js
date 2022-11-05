@@ -1,16 +1,15 @@
 let isTrap = false
+let boxData
 export function createCircle() {
-    const boxData = document.querySelector("box").getBoundingClientRect()
     document.addEventListener('mousedown', (e) => {
         const circle = document.createElement("div")
-        circle.style.background = "green"
         if (!(e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
-            console.log('inBox');
             isTrap = false
+            console.log('outBox');
             circle.style.background = "white"
         } else {
             circle.style.background = "var(--purple)"
-            console.log('outBox');
+            console.log('inBox');
         }
         circle.classList.add("circle")
         circle.style.top = e.clientY-25+"px"
@@ -19,8 +18,8 @@ export function createCircle() {
     })
 }
 export function moveCircle() {
-    const boxData = document.querySelector("box").getBoundingClientRect()
     document.addEventListener('mousemove', (e) => {
+        console.log('AAAAAAAAAAAAAAAAA')
         const lastChild = document.body.lastChild
         if (lastChild.classList.contains('circle')) {
         if (!isTrap) {
@@ -31,9 +30,17 @@ export function moveCircle() {
             lastChild.style.background = "var(--purple)"
             if (e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26) {
                 lastChild.style.left = e.clientX-26+"px"
-            } 
+            } else if (e.clientX <  boxData.x+26){
+                lastChild.style.left = boxData.x+"px"
+            } else {
+                lastChild.style.left = boxData.width+boxData.x-51+"px"
+            }
             if (e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26) {
                 lastChild.style.top = e.clientY-26+"px"
+            } else if(e.clientY <  boxData.y+26) {
+                lastChild.style.top = boxData.y+"px"
+            } else {
+                lastChild.style.top = boxData.height+boxData.y-51+"px"
             }
         }
         if ((e.clientX >  boxData.x+25 && e.clientX < boxData.width+boxData.x-25 && e.clientY >  boxData.y+25 && e.clientY < boxData.height+boxData.y-25)) {
@@ -49,8 +56,9 @@ export function setBox() {
     box.style.justifyContent = 'center'
     box.style.alignContent = 'center'
     document.body.append(box)
-    box.addEventListener("mou", (e) => {
-        console.log('mouse enter')
-        isTrap = true
-    })
+    // box.addEventListener("mou", (e) => {
+    //     console.log('mouse enter')
+    //     isTrap = true
+    // })
+    boxData = document.querySelector("box").getBoundingClientRect()
 }
