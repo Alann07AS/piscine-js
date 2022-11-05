@@ -13,6 +13,7 @@ let isTrap = false
 export function moveCircle() {
     document.addEventListener('mousemove', (e) => {
         const lastChild = document.body.lastChild
+        if (lastChild.classList.contains('circle')) {
         if (!isTrap) {
             lastChild.style.background = "white"
             lastChild.style.left = e.clientX-25+"px"
@@ -26,6 +27,7 @@ export function moveCircle() {
             if (e.clientY >  boxData.y+26 && e.clientY < boxData.height+boxData.y-26) {
                 lastChild.style.top = e.clientY-25+"px"
             }
+        }
         }
     })
     document.addEventListener('click', (e) => {
@@ -43,7 +45,7 @@ export function setBox() {
     box.style.alignContent = 'center'
     document.body.append(box)
     box.addEventListener('mouseenter', (e) => {
-        console.log('mousemove coucou')
+        console.log('mouse enter')
         isTrap = true
     })
 }
