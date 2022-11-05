@@ -14,11 +14,12 @@ export function moveCircle() {
     document.addEventListener('mousemove', (e) => {
         const lastChild = document.body.lastChild
         if (!isTrap) {
+            lastChild.style.background = "white"
             lastChild.style.left = e.clientX-25+"px"
             lastChild.style.top = e.clientY-25+"px"
         } else {
             const boxData = document.querySelector("box").getBoundingClientRect()
-            console.log(boxData)
+            lastChild.style.background = "var(--purple)"
             if (e.clientX >  boxData.x+26 && e.clientX < boxData.width+boxData.x-26) {
                 lastChild.style.left = e.clientX-25+"px"
             } 
