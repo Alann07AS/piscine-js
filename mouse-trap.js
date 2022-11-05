@@ -22,8 +22,7 @@ export function moveCircle() {
         const lastChild = document.body.lastChild
 
         if (lastChild.classList.contains('circle')) {
-            if ((e.clientX >  boxData.x-25 && e.clientX < boxData.width+boxData.x+25 && e.clientY >  boxData.y-25 && e.clientY < boxData.height+boxData.y+25)) {
-                console.log('AAAAAAAAAAAAAAA')
+            if ((e.clientX >  boxData.x && e.clientX < boxData.width+boxData.x && e.clientY >  boxData.y && e.clientY < boxData.height+boxData.y+25)) {
                 lastChild.style.background = "var(--purple)"
             } else {
                 lastChild.style.background = "white"
