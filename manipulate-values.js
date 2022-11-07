@@ -14,6 +14,6 @@ function mapValues(obj, func) {
     }
     return newObj
 }
-function reduceValues(obj, func) {
-    return Object.values(obj).reduce(func)
+function reduceValues(obj, func, acc = 0) {
+    return Object.values(obj).reduce(func, acc)
 }
