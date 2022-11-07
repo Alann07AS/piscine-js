@@ -3,4 +3,5 @@ function invert(obj={}) {
     for (const [key, value] of Object.entries(obj)) {
         newObj[value] = key
     }
+    return newObj
 }
