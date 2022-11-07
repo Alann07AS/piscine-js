@@ -15,5 +15,5 @@ function mapValues(obj, func) {
     return newObj
 }
 function reduceValues(obj, func) {
-    return Object.values(obj).reduce((acc, cr) => acc + cr, 3)
+    return Object.values(obj).reduce(func)
 }
