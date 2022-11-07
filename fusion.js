@@ -9,9 +9,11 @@ function isSameType(value1, value2) {
 }
 
 function fusion(obj1 = {}, obj2 = {}) {
-    console.log(Object.keys(obj1).length);
-    console.log(Object.keys(obj2).length);
+    console.log(Object.keys(obj1));
+    console.log(Object.keys(obj2));
+    let isInvert = false
     if (Object.keys(obj1).length < Object.keys(obj2).length) {
+        isInvert = true
         let objA = {}
         Object.assign(objA, obj1)
         obj1 = {}
@@ -27,14 +29,22 @@ function fusion(obj1 = {}, obj2 = {}) {
             switch (typeof value) {
                 case 'string':
                     if (isSameType(value, obj2[key])) {
-                        newObj[key] = value+" "+obj2[key]
+                        if (isInvert) {
+                            newObj[key] = obj2[key]+" "+value
+                        } else {
+                            newObj[key] = value+" "+obj2[key]
+                        }
                     } else {
                         newObj[key] = obj2[key]
                     }
                     break;
                 case 'number':
                     if (isSameType(value, obj2[key])) {
-                        newObj[key] = value+obj2[key]
+                        if (isInvert) {
+                            newObj[key] = obj2[key]+value
+                        } else {
+                            newObj[key] = value+obj2[key]
+                        }
                     } else {
                         newObj[key] = obj2[key]
                     }
@@ -42,13 +52,21 @@ function fusion(obj1 = {}, obj2 = {}) {
                 default:
                     if (Array.isArray(value)) {
                         if (isSameType(value, obj2[key])) {
-                            newObj[key] = [...value, ...obj2[key]]
+                            if (isInvert) {
+                                newObj[key] = [...obj2[key],...value]
+                            } else {
+                                newObj[key] = [...value, ...obj2[key]]
+                            }
                         } else {
                             newObj[key] = obj2[key]
                         }
                     } else {
                         if (isSameType(value, obj2[key])) {
-                            newObj[key] = fusion(value, obj2[key])
+                            if (isInvert) {
+                                newObj[key] = fusion(obj2[key], value)
+                            } else {
+                                newObj[key] = fusion(value, obj2[key])
+                            }
                         } else {
                             newObj[key] = obj2[key]
                         }
@@ -62,4 +80,6 @@ function fusion(obj1 = {}, obj2 = {}) {
     return newObj
 }
 
-console.log(fusion({ a: 1 }, { a: { b: 1 } }))
+console.log(fusion({ arr: [], arr1: [1] },
+    { arr: [12, 3], arr1: [2, 3], arr2: ['2', '1'] }
+  ))
