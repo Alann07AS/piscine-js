@@ -17,7 +17,7 @@ function mapValues(obj, func) {
 function reduceValues(obj, func) {
     let acc = obj[Object.keys(obj)[0]]
     for (const [key, value] of Object.entries(obj)) {
-        if (key == Object.keys(obj)[0]) {
+        if (key != Object.keys(obj)[0]) {
             acc = (func(acc, value))
         }
     }
