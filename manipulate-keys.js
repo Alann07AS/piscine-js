@@ -23,7 +23,7 @@ function reduce(arr, func, acc) {
     if (acc == '') {
         acc = arr[0]
     }
-    for (let i = 1; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         acc = func(acc, arr[i])
     }
     return acc
