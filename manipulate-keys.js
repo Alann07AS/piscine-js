@@ -15,13 +15,13 @@ function mapKeys(obj, func) {
     }
     return newObj
 }
-function reduceKeys(obj, func, acc = '') {
+function reduceKeys(obj, func, acc) {
     // return Object.keys(obj).reduce(func, acc)
     return reduce(Object.keys(obj), func, acc)
 }
 function reduce(arr, func, acc) {
     let i = 0
-    if (acc == '') {
+    if (acc == null) {
         acc = arr[0]
         i = 1
     }
@@ -38,4 +38,4 @@ const cart = {
     garlic: 22,
     paprika: 4,
 }
-console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)))
+console.log(reduceKeys(cart, (acc, cr) => (acc += (cr.length <= 4) & 1), 0))
