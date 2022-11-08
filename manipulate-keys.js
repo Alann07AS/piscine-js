@@ -14,8 +14,15 @@ function mapKeys(obj, func) {
     }
     return newObj
 }
-function reduceKeys(obj, func, acc = 0) {
+function reduceKeys(obj, func, acc = '') {
     return Object.keys(obj).reduce(func, acc)
 }
-
-// console.log(mapKeys({'salut': 90}, (a)=> a+"TOI"));
+const cart=  {
+    vinegar: 80,
+    sugar: 100,
+    oil: 50,
+    onion: 200,
+    garlic: 22,
+    paprika: 4,
+}
+console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)));
