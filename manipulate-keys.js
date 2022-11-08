@@ -7,6 +7,7 @@ function filterKeys(obj, func) {
     }
     return newObj
 }
+
 function mapKeys(obj, func) {
     const newObj = {}
     for (const [key, value] of Object.entries(obj)) {
@@ -15,9 +16,10 @@ function mapKeys(obj, func) {
     return newObj
 }
 function reduceKeys(obj, func, acc = '') {
-    return Object.keys(obj).reduce(func, acc)
+    return Object.keys(obj).reduce(func)
 }
-const cart=  {
+
+const cart = {
     vinegar: 80,
     sugar: 100,
     oil: 50,
