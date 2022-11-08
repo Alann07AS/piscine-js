@@ -20,10 +20,12 @@ function reduceKeys(obj, func, acc = '') {
     return reduce(Object.keys(obj), func, acc)
 }
 function reduce(arr, func, acc) {
+    let i = 0
     if (acc == '') {
         acc = arr[0]
+        i = 1
     }
-    for (let i = 0; i < arr.length; i++) {
+    for (; i < arr.length; i++) {
         acc = func(acc, arr[i])
     }
     return acc
@@ -36,4 +38,4 @@ const cart = {
     garlic: 22,
     paprika: 4,
 }
-console.log(reduceKeys(cart, (acc, cr) => `${acc}${cr}:`, ':'))
+console.log(reduceKeys(cart, (acc, cr) => acc.concat(', ', cr)))
