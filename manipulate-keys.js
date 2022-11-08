@@ -16,9 +16,16 @@ function mapKeys(obj, func) {
     return newObj
 }
 function reduceKeys(obj, func, acc = '') {
-    return Object.keys(obj).reduce(func)
+    // return Object.keys(obj).reduce(func, acc)
+    return reduce(Object.keys(obj), func)
 }
-
+function reduce(arr, func) {
+    let acc = arr[0]
+    for (let i = 1; i < arr.length; i++) {
+        acc = func(acc, arr[i])
+    }
+    return acc
+} 
 const cart = {
     vinegar: 80,
     sugar: 100,
