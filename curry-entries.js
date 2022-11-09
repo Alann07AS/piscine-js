@@ -63,7 +63,6 @@ function reduce(arr, func, acc) {
         i = 1
     }
     for (; i < arr.length; i++) {
-        console.log('COUCOU', acc, i);
         acc = func(acc, arr[i])
     }
     return acc
@@ -76,17 +75,11 @@ function reduceCurry(func) {
 // console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0));
 
 function reduceScore(obj, init = 0) {
-    init = {pilotingScore: 0, shootingScore: init}
-    const forceUser = filterCurry(
-        ([k,v]) => {if(v.isForceUser){return [k,v]}}
-    )(obj)
-    const final = reduceCurry((b, a) => {return {pilotingScore: (b.pilotingScore + a.pilotingScore), shootingScore: (b.shootingScore + a.shootingScore)}})(forceUser, init)
-    return final.shootingScore + final.pilotingScore
+    return reduceCurry((acc, [k,v])=>{
+        return v.isForceUser ? acc + v.pilotingScore + v.shootingScore : acc
+    })(obj, acc = init)
 }
-console.log(reduceCurry((acc, [k, v]) => acc.concat(' ', `${k}:${v.id}`))(
-    personnel,
-    'personnel:',
-    ));
+console.log(reduceScore(personnel, 0));
 
 function filterForce(obj) {
     return filterCurry(([k,v]) => {if(v.isForceUser && v.shootingScore >= 80) {return [k,v]}})(obj)
