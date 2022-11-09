@@ -15,13 +15,13 @@ function defaultCurry(obj1) {
 // })
 // );
 
-// const personnel = {
-//     lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
-//     sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
-//     zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
-//     ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
-//     calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
-// }
+const personnel = {
+    lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
+    sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
+    zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
+    ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
+    calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
+}
 
 function mapCurry(func) {
     return function (obj) {
@@ -79,7 +79,7 @@ function reduceScore(obj, acc = 0) {
         return v.isForceUser ? acc + v.pilotingScore + v.shootingScore : acc
     })(obj, acc)
 }
-console.log(reduceScore(personnel, 0));
+// console.log(reduceScore(personnel, 0));
 
 function filterForce(obj) {
     return filterCurry(([k,v]) => {if(v.isForceUser && v.shootingScore >= 80) {return [k,v]}})(obj)
@@ -87,10 +87,10 @@ function filterForce(obj) {
 // console.log(filterForce(personnel));
 
 function mapAverage(obj) {
-    mapCurry(([k,v]) =>{
+    return mapCurry(([k,v]) =>{
         return [k, defaultCurry(v)(
             {averageScore: (v.shootingScore+ v.pilotingScore)/2}
         )]
     })(obj)
 }
-// console.log(mapAverage(personnel));
+console.log(mapAverage(personnel));
