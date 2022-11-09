@@ -82,7 +82,7 @@ function reduceScore(obj, acc = 0) {
 // console.log(reduceScore(personnel, 0));
 
 function filterForce(obj) {
-    return filterCurry(([k,v]) => {if(v.isForceUser && v.shootingScore >= 80) {return [k,v]}})(obj)
+    return filterCurry(([k,v]) => v.isForceUser && v.shootingScore >= 80)(obj)
 }
 // console.log(filterForce(personnel));
 
