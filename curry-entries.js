@@ -74,10 +74,10 @@ function reduceCurry(func) {
 }
 // console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0));
 
-function reduceScore(obj, init = 0) {
+function reduceScore(obj, acc = 0) {
     return reduceCurry((acc, [k,v])=>{
         return v.isForceUser ? acc + v.pilotingScore + v.shootingScore : acc
-    })(obj, acc = init)
+    })(obj, acc)
 }
 console.log(reduceScore(personnel, 0));
 
