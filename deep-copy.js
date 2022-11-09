@@ -6,11 +6,14 @@ function mapEntries(obj, func) {
     }
     return newObj
 }
+function isReg(param) {
+    console.log(param instanceof RegExp);
+    return param instanceof RegExp
+}
 function deepCopy(entrie) {
-    console.log(Array.isArray(entrie), entrie);
     if(Array.isArray(entrie)) {
         return entrie.map((val)=> deepCopy(val))
-    } else if(typeof entrie === 'object') {
+    } else if(typeof entrie === 'object' && !isReg(entrie)) {
         return mapEntries(entrie, ([k,v])=> [k, deepCopy(v)])
     } else {
         return entrie
