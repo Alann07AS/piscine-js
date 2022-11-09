@@ -7,6 +7,7 @@ function mapEntries(obj, func) {
     return newObj
 }
 function deepCopy(entrie) {
+    console.log(entrie instanceof RegExp);
     if(Array.isArray(entrie)) {
         return entrie.map((val)=> deepCopy(val))
     } else if(typeof entrie === 'object' && !entrie instanceof RegExp) {
@@ -16,7 +17,6 @@ function deepCopy(entrie) {
     }
 }
 
-// console.log(_.isRegExp(/geek/));
-console.log(deepCopy({ user: 'mika', age: 37 }));
-console.log(deepCopy({ a: { b: { c: 1 } } }));
-console.log(deepCopy([console.log, /hello/]));
+// console.log(deepCopy({ user: 'mika', age: 37 }));
+// console.log(deepCopy({ a: { b: { c: 1 } } }));
+// console.log(deepCopy([console.log, /hello/]));
