@@ -63,13 +63,14 @@ function reduce(arr, func, acc) {
         i = 1
     }
     for (; i < arr.length; i++) {
+        console.log('COUCOU', acc, i);
         acc = func(acc, arr[i])
     }
     return acc
 } 
 function reduceCurry(func) {
-    return function (obj, acc = 0) {
-        return reduce(Object.values(obj), func, acc)
+    return function (obj, acc = null) {
+        return reduce(Object.entries(obj), func, acc)
     }
 }
 // console.log(reduceCurry((acc, [k, v]) => (acc += v))({ a: 1, b: 2, c: 3 }, 0));
@@ -82,7 +83,10 @@ function reduceScore(obj, init = 0) {
     const final = reduceCurry((b, a) => {return {pilotingScore: (b.pilotingScore + a.pilotingScore), shootingScore: (b.shootingScore + a.shootingScore)}})(forceUser, init)
     return final.shootingScore + final.pilotingScore
 }
-// console.log(reduceScore(personnel, 420));
+console.log(reduceCurry((acc, [k, v]) => acc.concat(' ', `${k}:${v.id}`))(
+    personnel,
+    'personnel:',
+    ));
 
 function filterForce(obj) {
     return filterCurry(([k,v]) => {if(v.isForceUser && v.shootingScore >= 80) {return [k,v]}})(obj)
@@ -96,4 +100,4 @@ function mapAverage(obj) {
         )]
     })(obj)
 }
-console.log(mapAverage(personnel));
+// console.log(mapAverage(personnel));
