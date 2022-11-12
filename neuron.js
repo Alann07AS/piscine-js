@@ -14,10 +14,10 @@ function neuron(arr = "") {
         }
         if (!objToReturn.hasOwnProperty(camelQuestion)) {
             objToReturn[key][camelQuestion] = {}
-            objToReturn[key][camelQuestion][key] = ''
+            objToReturn[key][camelQuestion][key+'s'] = ''
             objToReturn[key][camelQuestion].responses = []
         }
-        objToReturn[key][camelQuestion][key] = question
+        objToReturn[key][camelQuestion][key+'s'] = question
         objToReturn[key][camelQuestion].responses.push(rep)
     }
     return objToReturn
