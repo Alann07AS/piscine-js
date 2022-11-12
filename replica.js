@@ -9,8 +9,8 @@ function isSameType(value1, value2) {
 }
 
 function fusion(obj1 = {}, obj2 = {}) {
-    console.log(Object.keys(obj1));
-    console.log(Object.keys(obj2));
+    // console.log(Object.keys(obj1));
+    // console.log(Object.keys(obj2));
     let isInvert = false
     if (Object.keys(obj1).length < Object.keys(obj2).length) {
         isInvert = true
@@ -23,7 +23,7 @@ function fusion(obj1 = {}, obj2 = {}) {
         console.log(obj1);
         console.log(obj2);    
     }
-    const newObj = {}
+    let newObj = {}
     for (const [key, value] of Object.entries(obj1)) {
         if(Object.keys(obj2).includes(key)) {
             if (typeof value != 'object') {
@@ -52,7 +52,8 @@ function fusion(obj1 = {}, obj2 = {}) {
                 }
             }
         } else {
-            newObj[key] = value
+            console.log('COUCOUO', key);
+            newObj = {...obj1, ...obj2}
         }
     }
     return newObj
@@ -60,16 +61,18 @@ function fusion(obj1 = {}, obj2 = {}) {
 
 
 function replica(src, ...args) {
-    args.forEach((obj) => {
+    args.forEach((obj, i) => {
+        console.log(i,'i', obj,'obj', src, 'src');
         src = fusion(src, obj)
     })
     return src
 }
 
 // console.log( replica(
-    // {},
-    // Object.freeze({ line: 'Replicants are like any other machine' }),
-    // Object.freeze({ author: 'Rich' })
+//     {},
+//     Object.freeze({ line: 'Replicants are like any other machine' }),
+//     Object.freeze({ author: 'Rich' })
 //   ));
 
-// console.log(replica({ a: [1, 2, 4] }, { a: { b: [4] } }));
+console.log(replica({ a: { b: 1, c: 2 } }, { a: { c: 23 } }));
+// console.log({ line: 'Replicants are like any other machine', author: 'Rich' });
