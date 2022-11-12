@@ -5,20 +5,21 @@ const getRep = /(?<=Response: ).*$/gi
 function neuron(arr = "") {
     const objToReturn = {}
     for (let i = 0; i < arr.length; i++) {
-        const key = arr[i].match(getFirstKey)[0].toLowerCase()
+        const subKey = arr[i].match(getFirstKey)[0].toLowerCase()
+        const mainKey = subKey+'s'
         const question = arr[i].match(getQuestion)[0]
         const camelQuestion = question.match(getCamelQuestion).filter((a)=>a).join('_').toLowerCase()
         const rep = arr[i].match(getRep)[0]
-        if (!objToReturn.hasOwnProperty(key)) {
-            objToReturn[key] = {}
+        if (!objToReturn.hasOwnProperty(mainKey)) {
+            objToReturn[mainKey] = {}
         }
         if (!objToReturn.hasOwnProperty(camelQuestion)) {
-            objToReturn[key][camelQuestion] = {}
-            objToReturn[key][camelQuestion][key+'s'] = ''
-            objToReturn[key][camelQuestion].responses = []
+            objToReturn[mainKey][camelQuestion] = {}
+            objToReturn[mainKey][camelQuestion][subKey] = ''
+            objToReturn[mainKey][camelQuestion].responses = []
         }
-        objToReturn[key][camelQuestion][key+'s'] = question
-        objToReturn[key][camelQuestion].responses.push(rep)
+        objToReturn[mainKey][camelQuestion][subKey] = question
+        objToReturn[mainKey][camelQuestion].responses.push(rep)
     }
     return objToReturn
 }
