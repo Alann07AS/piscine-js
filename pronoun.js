@@ -6,7 +6,7 @@ function pronoun(str = "") {
     const proList = {}
     const fieldStr = str.match(fieldsSentence)
     console.log(fieldStr);
-    for(i = 1;i < fieldStr.length; i++) {
+    for(let i = 1;i < fieldStr.length; i++) {
         const preViousWord = fieldStr[i-1].toLowerCase()
         const currentWord = fieldStr[i]
         if (pronouns.test(preViousWord)) {
