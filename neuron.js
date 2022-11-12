@@ -1,4 +1,4 @@
-const getFirstKey = /^[^s:]*/gi
+const getFirstKey = /^.*(?=s:)/gi
 const getQuestion = /(?<=: ).*(?= -)/gi
 const getCamelQuestion = /\w*/gi
 const getRep = /(?<=Response: ).*$/gi
@@ -24,11 +24,14 @@ function neuron(arr = "") {
     return objToReturn
 }
 
-// console.log(neuron([
-//     'Questions: how are you? - Response: well thanks, and you?',
-//     'affirmations: i am fine - Response: cool',
-//     'Orders: turn on the lights! - Response: done',
-//     'affirmations: i am fine - Response: awesome',
-//   ]));
+console.log(neuron([
+    'Questions: how are you? - Response: well thanks, and you?',
+    'affirmations: i am fine - Response: cool',
+    'Orders: turn on the lights! - Response: done',
+    'affirmations: i am fine - Response: awesome',
+  ]));
 
-console.log(neuron(['Orders: shutdown please! - Response: no!']));
+// console.log(neuron([
+//     'Questions: what is life? - Response: The condition that distinguishes animals and plants from inorganic matter',
+//     'Questions: what is life? - Response: Life is a characteristic that distinguishes physical entities that have biological processes',
+//   ]));
