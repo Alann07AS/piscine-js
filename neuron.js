@@ -13,7 +13,7 @@ function neuron(arr = "") {
         if (!objToReturn.hasOwnProperty(mainKey)) {
             objToReturn[mainKey] = {}
         }
-        if (!objToReturn.hasOwnProperty(camelQuestion)) {
+        if (!objToReturn[mainKey].hasOwnProperty(camelQuestion)) {
             objToReturn[mainKey][camelQuestion] = {}
             objToReturn[mainKey][camelQuestion][subKey] = ''
             objToReturn[mainKey][camelQuestion].responses = []
@@ -24,14 +24,14 @@ function neuron(arr = "") {
     return objToReturn
 }
 
-console.log(neuron([
-    'Questions: how are you? - Response: well thanks, and you?',
-    'affirmations: i am fine - Response: cool',
-    'Orders: turn on the lights! - Response: done',
-    'affirmations: i am fine - Response: awesome',
-  ]));
-
 // console.log(neuron([
-//     'Questions: what is life? - Response: The condition that distinguishes animals and plants from inorganic matter',
-//     'Questions: what is life? - Response: Life is a characteristic that distinguishes physical entities that have biological processes',
+//     'Questions: how are you? - Response: well thanks, and you?',
+//     'affirmations: i am fine - Response: cool',
+//     'Orders: turn on the lights! - Response: done',
+//     'affirmations: i am fine - Response: awesome',
 //   ]));
+
+console.log(neuron([
+    'Questions: what is life? - Response: The condition that distinguishes animals and plants from inorganic matter',
+    'Questions: what is life? - Response: Life is a characteristic that distinguishes physical entities that have biological processes',
+]).questions.what_is_life);
