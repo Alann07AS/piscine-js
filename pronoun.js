@@ -5,6 +5,7 @@ const fieldsSentence = /\b(\w+)\b/g
 function pronoun(str = "") {
     const proList = {}
     const fieldStr = str.match(fieldsSentence)
+    fieldStr.push(fieldStr[fieldStr.length-1])
     console.log(fieldStr);
     for(let i = 1;i < fieldStr.length; i++) {
         const preViousWord = fieldStr[i-1].toLowerCase()
@@ -32,4 +33,5 @@ function pronoun(str = "") {
 const test1 = "Your reducer function's returned value is assigned to the accumulator, whose value is remembered across each iteration throughout the array and ultimately becomes the final, single resulting value."
 const test3 = "I buy,\ni to,\nYOU buy,\nit have,\nIt buys,\nit is,\nyou go"
 const testX = 'she she she she is'
-console.log(pronoun(testX));
+const testEnd = 'we will rock you'
+console.log(pronoun(test3));
